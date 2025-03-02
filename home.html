@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | page {% endblock %}
+
+{% block content %}
+<!-- Include Font Awesome CDN for arrow icon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<style>
+    .content {
+        background-image: url("{{ url_for('static', filename='images/home bg.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding: 5%;
+        text-align: left;
+    }
+
+    /* Styling for the text */
+    .content h1, .content h2 {
+        color: black;  /* Set the color of the headings */
+    }
+
+    .navbar {
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar a {
+        color: rgb(33, 25, 25);
+        padding: 30px 40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .navbar button {
+        color: #7B68EE;
+        background-color: white;
+        padding: 14px 20px;
+        margin: 0 10px;
+        border: 2px solid #7B68EE;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Change button color when hovered */
+    .navbar button:hover {
+        background-color: #7B68EE;
+        color: white;
+    }
+
+  
+
+    /* Styling for the input field with the down arrow button */
+    .input-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .command-box {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        outline: none;
+        padding-right: 40px; /* Space for the arrow button */
+    }
+
+    /* Style for the arrow button inside the input box */
+    .down-arrow {
+        position: absolute;
+        right: 10px;  /* Align the button to the right */
+        top: 50%;
+        transform: translateY(-50%);  /* Center vertically */
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #6A5ACD;  /* Arrow color */
+        transition: color 0.3s ease;
+    }
+
+    .down-arrow:hover {
+        color: #7B68EE;  /* Change color when hovering */
+    }
+
+    /* Dropdown menu styling */
+    .dropdown-menu {
+        display: none;  /* Initially hidden */
+        position: absolute;
+        top: 30px;  /* Adjust the position below the input field */
+        right: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 200px;
+    }
+
+    .dropdown-menu a {
+        color: #333;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #7B68EE;
+        color: white;
+    }
+
+    /* Footer Styling */
+    .footer-row {
+        display: flex;  /* Use Flexbox for side-by-side layout */
+        justify-content: space-between;  /* Distribute the space evenly between the columns */
+        align-items: flex-start;  /* Align items at the top */
+        padding: 20px;
+        background-color: #f1f1f1;
+    }
+
+    /* Styling for each footer column */
+    .footer-column {
+        flex: 1;  /* Each column will take up equal width */
+        padding: 20px;
+        margin: 0 10px;  /* Add spacing between columns */
+        max-width: 300px;  /* Set a max width to avoid overly wide columns */
+    }
+
+    /* Add hover effect to links */
+    .footer-column a:hover {
+        color: #7B68EE;
+        text-decoration: underline;
+    }
+
+    /* Footer heading styling */
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Footer links list styling */
+    .footer-column ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    /* Styling for the sign-up button */
+    .sign-up-btn {
+        background-color: #7B68EE;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    /* Hover effect for the sign-up button */
+    .sign-up-btn:hover {
+        background-color: #6A5ACD;
+        color: white;
+    }
+
+    /* Responsive design: Stack footer columns vertically on smaller screens */
+    @media (max-width: 768px) {
+        .footer-row {
+            flex-direction: column;  /* Stack the columns vertically on smaller screens */
+            align-items: center;  /* Center the content */
+        }
+        .footer-column {
+            margin-bottom: 20px;  /* Add space between stacked columns */
+            max-width: 100%;  /* Allow columns to stretch fully */
+        }
+    }
+    h1{
+        font-size: 60px;
+        font-weight: 1000px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+
+<div class="content">
+    {% if msg %}
+    <p>{{msg}}</p>
+{% endif %}
+
+   <div style="width: 50%;" >
+    <h1 > Every Student Deserve Good      <div style="color: rgb(255, 0, 102);">  Mental Health</div></h1>
+    &nbsp;
+
+
+    <br><br>
+    <p>At Heal, we are dedicated to supporting the mental well-being of students.
+        We understand the unique challenges students face, from academic pressures to personal struggles and we believe no one should face them alone.</p>
+        Our Mission <br>
+To empower students to prioritize their mental health by providing accessible resources, expert advice, and a supportive network.
+    </p>
+   </div>
+    </div>
+
+<footer>
+    <div class="footer-row">
+       
+        <!-- Navigation Column -->
+        <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Therapist</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Social Column -->
+        <div class="footer-column">
+            <h3>Social</h3>
+            <ul>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+        <!-- Sign-Up Column -->
+        <div class="footer-column">
+           <h3>Sign Up</h3>
+            <a href="{{ url_for('signup') }}" class="btn btn-info form-control" style="background-color: #6A5ACD !important;color: white;">Sign Up</a>
+            &nbsp;&nbsp;
+            <p>Contact us: 9536214789/8459632741</p>
+        </div>
+    </div>
+    <p>&copy; 2024 Heal. All rights reserved.</p>
+</footer>
+
+<!-- Add JavaScript to handle dropdown toggle -->
+<script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById('dropdown-menu');
+        // Toggle the visibility of the dropdown menu
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close the dropdown if clicked outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.down-arrow') && !event.target.matches('.command-box')) {
+            var dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,196 @@
+{% extends 'base2.html' %}
+
+{% block title %}Advice | Dashboard{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-sections {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .contact-section {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .contact-section button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: #7B68EE;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-section button:hover {
+            background-color: #0056b3;
+        }
+        .contact-content {
+            display: none;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            margin-top: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        /* Chart Styling */
+        .chart-container {
+            display: flex;
+            width: 40%;
+        }
+    </style>
+
+    <!-- Dashboard Section with Charts -->
+    <h1 style="text-align: center;">Dashboard</h1>
+
+    
+    <div style="display: flex;flex-wrap: wrap;justify-content: space-around;">
+        <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ad! Similique quas, eligendi ex, veritatis deleniti illo sapiente fugiat maxime excepturi error hic esse, quo amet temporibus sed perferendis reprehenderit?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quas magni consectetur omnis quod ab, laboriosam voluptate debitis nihil sed dignissimos quibusdam, obcaecati recusandae architecto vel nemo, hic pariatur officiis?          
+            </p>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+    
+        <div class="chart-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ad! Similique quas, eligendi ex, veritatis deleniti illo sapiente fugiat maxime excepturi error hic esse, quo amet temporibus sed perferendis reprehenderit?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quas magni consectetur omnis quod ab, laboriosam voluptate debitis nihil sed dignissimos quibusdam, obcaecati recusandae architecto vel nemo, hic pariatur officiis?          
+            </p>
+        </div>
+        <div class="chart-container">
+            <canvas id="scatterChart"></canvas>
+        </div>
+    
+        <div class="chart-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ad! Similique quas, eligendi ex, veritatis deleniti illo sapiente fugiat maxime excepturi error hic esse, quo amet temporibus sed perferendis reprehenderit?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quas magni consectetur omnis quod ab, laboriosam voluptate debitis nihil sed dignissimos quibusdam, obcaecati recusandae architecto vel nemo, hic pariatur officiis?          
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Pie Chart
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['On-Campus', 'Off-Campus'],
+                datasets: [{
+                    label: 'Residential Status',
+                    data: [12, 88], // Replace with actual data
+                    backgroundColor: ['#36A2EB', '#FF6384'],
+                }]
+            }
+        });
+
+        // Bar Chart
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['1st Year', '2nd Year', '3rd Year', '4th Year'],
+                datasets: [{
+                    label: 'Students per Academic Year',
+                    data: [20, 15, 30, 10], // Replace with actual data
+                    backgroundColor: '#FFCE56',
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Scatter Chart
+        const scatterCtx = document.getElementById('scatterChart').getContext('2d');
+        const scatterChart = new Chart(scatterCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'CGPA vs Age',
+                    data: [
+                        {x: 18, y: 3.5},
+                        {x: 20, y: 3.0},
+                        {x: 22, y: 3.8},
+                        {x: 19, y: 3.2},
+                    ], // Replace with actual data
+                    backgroundColor: '#4BC0C0',
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Age'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'CGPA'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        function toggleContact(index) {
+            const sections = document.querySelectorAll('.contact-content');
+            sections.forEach((section, idx) => {
+                if (idx === index) {
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+{% endblock %}

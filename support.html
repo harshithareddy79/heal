@@ -1,0 +1,138 @@
+{% extends 'base2.html' %}
+
+{% block title %}Support | page {% endblock %}
+
+{% block content %}
+<style>
+    /* Updated content section to use background color */
+    .content {
+        background-color: #7B68EE;  /* Set the background color to #7B68EE */
+        padding: 50px 0;
+        color: #f5eeee;
+        text-align: center;
+    }
+
+    /* Container to center the cards */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;  /* Allow wrapping of cards */
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;  /* Center the cards */
+    }
+
+    /* Card styling */
+    .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 30%; /* Adjust width to give medium size */
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+        color: #333;
+        margin: 15px 0;
+    }
+
+    /* Links and Buttons */
+    .card a {
+        color: white;
+        background-color: #7B68EE;  /* Updated button color */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px 0;
+        display: inline-block;
+        font-weight: bold;
+        width: 100%; /* Ensure button takes full width of the card */
+        text-align: center;  /* Center-align button text */
+    }
+
+    .card a:hover {
+        background-color: #6a4bcf;  /* Darker shade on hover */
+    }
+
+    /* Navbar link styling */
+    .navbar a {
+        color: rgb(33, 25, 25); /* Text color */
+        padding: 30px 40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .navbar button {
+        color: white;
+        background-color: #af4c91; /* Button color */
+        padding: 14px 20px;
+        margin: 0 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+</style>
+
+<div class="content">
+    <!-- First row for Individual Therapy, Meditation, and Stress Relief Activities -->
+    <div class="container">
+        <div class="card">
+            <img alt="Individual therapy"
+                 src="https://th.bing.com/th/id/OIP.TnoHZx9PkaOjJTKTaoiB_AHaE7?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            <div class="card-body">
+                <h5 class="card-title">Individual therapy by counselors</h5>
+                <a href="/counsellers">Go to information for more knowledge</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Meditation"
+                 src="https://th.bing.com/th/id/OIP.qrtMLKdeO9j7e-KjsOIiOAHaE8?w=257&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            <div class="card-body">
+                <h5 class="card-title">Meditation to get you relaxation</h5>
+                <a href="/meditation">Go to information services for more knowledge</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Stress Relief Activities"
+                 src="https://i.ytimg.com/vi/PjVAOinLZrE/maxresdefault.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Stress Relief <br> Activities</br></h5>
+                <a href="/games">Explore Stress Relief Activities</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second row for Reading Books and Music (on the same row) -->
+    <div class="container">
+        <div class="card">
+            <img alt="Reading Books"
+                 src="https://static.vecteezy.com/system/resources/previews/001/991/521/non_2x/reading-book-concept-man-reading-book-on-stack-of-books-online-books-library-exam-preparation-home-schooling-distance-education-can-be-used-for-landing-pages-web-banners-templates-backgrounds-free-vector.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Reading Books for Mental Health</h5>
+                <a href="/books">Go to book suggestions for more knowledge</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Music"
+                 src="https://img.freepik.com/free-photo/volumetric-musical-background-with-treble-clef-notes-generative-ai_169016-29576.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Music for mood swings</h5>
+                <a href="/music">Go to music suggestions depending on moods</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

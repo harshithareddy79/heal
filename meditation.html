@@ -1,0 +1,132 @@
+{% extends 'base2.html' %}
+
+{% block title %}Support | page {% endblock %}
+
+{% block content %}
+<style>
+    /* Updated content section to use background color */
+    .content {
+        background-color: #7B68EE;  /* Set the background color to #7B68EE */
+        padding: 50px 0;
+        color: #f5eeee;
+        text-align: center;
+    }
+
+    /* Container to center the cards */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;  /* All cards in a single row */
+        gap: 20px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    /* Card styling */
+    .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 22%; /* Make cards fit in one row with equal width */
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+        color: #333;
+        margin: 15px 0;
+    }
+
+    /* Links and Buttons */
+    .card a {
+        color: white;
+        background-color: #7B68EE;  /* Updated button color */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px 0;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .card a:hover {
+        background-color: #6a4bcf;  /* Darker shade on hover */
+    }
+
+    /* Navbar link styling */
+    .navbar a {
+        color: rgb(33, 25, 25); /* Text color */
+        padding: 30px 40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .navbar button {
+        color: white;
+        background-color: #af4c91; /* Button color */
+        padding: 14px 20px;
+        margin: 0 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+</style>
+
+<div class="content">
+    <!-- All Containers in the same row -->
+    <center><h3>Meditations</h3></center>
+    <div class="container">
+        
+        <div class="card">
+            <img alt="Individual therapy"
+                 src="https://bangaloreashram.org/app/uploads-blr/2023/08/Art-of-Living-Bangalore-Vishalakshmi-Mantap.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Art of Living International Center</h5>
+                <a href="https://g.co/kgs/RPtdh6L" target="_blank">For Visit</a>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Meditation"
+                 src="https://karnatakatourism.org/wp-content/uploads/2020/06/pyramid-valley-karnataka.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Pyramid Valley International</h5>
+                <a href="https://g.co/kgs/4hbCycM" target="_blank">For Visit</a>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Stress Relief Activities"
+                 src="https://swarajya.gumlet.io/swarajya/2023-01/beba4ae0-9def-4be5-876f-6bec90271fdb/WhatsApp_Image_2023_01_13_at_3_29_33_PM.jpeg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true">
+            <!-- Replace with correct image URL -->
+            <div class="card-body">
+                <h5 class="card-title">Isha Foundation  Chikkaballapura </h5>
+                <a href="https://g.co/kgs/vhED5if" target="_blank">For Visit</a>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Reading Books"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLSsWGHSoS9MmTqgbziok21wibtsDHHaVPXxLfHT6cduCQKH4L1zJEGEWjjoeRRTPlnM8&usqp=CAU">
+            <div class="card-body">
+                <h5 class="card-title">Dhamma Paphulla Vipassana Meditation & Research Centre</h5>
+                <a href="https://g.co/kgs/m1rWtNX" target="_blank">For Visit</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

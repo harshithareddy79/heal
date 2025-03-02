@@ -1,0 +1,159 @@
+{% extends 'base2.html' %}
+
+{% block title %}Analytics | page {% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #7B68EE;  /* Updated color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Added styling for the subheading */
+        .header .subheading {
+            margin-top: 10px;  /* Space below the main heading */
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .card a {
+            color: #7B68EE;  /* Updated color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .more-advice {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .more-advice a {
+            color: #7B68EE;  /* Updated color */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .more-advice a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+
+    <div class="header">
+        Dashboard
+        <!-- Subheading added below the header -->
+        <!-- <div class="subheading">
+            Expert information and advice to help you through the challenges of student life.
+        </div> -->
+    </div>
+    <div class="content">
+        <div class="grid-container">
+            <div class="card">
+                <form action="/analytics" method="post" style="text-align: left;width: 70%;margin: auto;padding: 25px;border: 1px solid black;">
+                    <center><h3>Plot Graph</h3></center><hr>
+                    <label for="">Column 1</label>
+                    <select id="options" name="col1" required class="form-control">
+                        <option value="gender">Gender</option>
+                        <option value="age">Age</option>
+                        <option value="university">University</option>
+                        <option value="degree_level">Degree Level</option>
+                        <option value="degree_major">Degree Major</option>
+                        <option value="academic_year">Academic Year</option>
+                        <option value="cgpa">CGPA</option>
+                        <option value="residential_status">Residential Status</option>
+                        <option value="campus_discrimination">Campus Discrimination</option>
+                        <option value="sports_engagement">Sports Engagement</option>
+                        <option value="average_sleep">Average Sleep</option>
+                        <option value="study_satisfaction">Study Satisfaction</option>
+                        <option value="academic_workload">Academic Workload</option>
+                        <option value="academic_pressure">Academic Pressure</option>
+                        <option value="financial_concerns">Financial Concerns</option>
+                        <option value="social_relationships">Social Relationships</option>
+                        <option value="depression">Depression</option>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="isolation">Isolation</option>
+                        <option value="future_insecurity">Future Insecurity</option>
+                        <option value="stress_relief_activities">Stress Relief Activities</option>
+                    </select>
+                    <br>
+                    <label for="">Column 2</label>
+                    <select id="options" name="col2" required class="form-control">
+                        <option value="gender">Gender</option>
+                        <option value="age">Age</option>
+                        <option value="university">University</option>
+                        <option value="degree_level">Degree Level</option>
+                        <option value="degree_major">Degree Major</option>
+                        <option value="academic_year">Academic Year</option>
+                        <option value="cgpa">CGPA</option>
+                        <option value="residential_status">Residential Status</option>
+                        <option value="campus_discrimination">Campus Discrimination</option>
+                        <option value="sports_engagement">Sports Engagement</option>
+                        <option value="average_sleep">Average Sleep</option>
+                        <option value="study_satisfaction">Study Satisfaction</option>
+                        <option value="academic_workload">Academic Workload</option>
+                        <option value="academic_pressure">Academic Pressure</option>
+                        <option value="financial_concerns">Financial Concerns</option>
+                        <option value="social_relationships">Social Relationships</option>
+                        <option value="depression">Depression</option>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="isolation">Isolation</option>
+                        <option value="future_insecurity">Future Insecurity</option>
+                        <option value="stress_relief_activities">Stress Relief Activities</option>
+                    </select>
+                    <br>
+                    <button type="submit" class="btn btn-success">submit</button>
+                </form>
+            </div>
+            {% if img %}
+            <div class="card">
+                <img src="{{img}}" style="width: 100%;">
+            </div>
+            {% endif %}
+        </div>
+        <!-- <div class="more-advice">
+            <a href="#">More Advice and Information &rarr;</a>
+        </div> -->
+    </div>
+{% endblock %}

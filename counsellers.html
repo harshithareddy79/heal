@@ -1,0 +1,134 @@
+{% extends 'base2.html' %}
+
+{% block title %}Support | page {% endblock %}
+
+{% block content %}
+<style>
+    /* Updated content section to use background color */
+    .content {
+        background-color: #7B68EE;  /* Set the background color to #7B68EE */
+        padding: 50px 0;
+        color: #f5eeee;
+        text-align: center;
+    }
+
+    /* Container to center the cards */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;  /* All cards in a single row */
+        gap: 20px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    /* Card styling */
+    .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 22%; /* Make cards fit in one row with equal width */
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+        color: #333;
+        margin: 15px 0;
+    }
+
+    /* Links and Buttons */
+    .card a {
+        color: white;
+        background-color: #7B68EE;  /* Updated button color */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px 0;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .card a:hover {
+        background-color: #6a4bcf;  /* Darker shade on hover */
+    }
+
+    /* Navbar link styling */
+    .navbar a {
+        color: rgb(33, 25, 25); /* Text color */
+        padding: 30px 40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .navbar button {
+        color: white;
+        background-color: #af4c91; /* Button color */
+        padding: 14px 20px;
+        margin: 0 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+
+</style>
+
+<div class="content">
+    <!-- All Containers in the same row -->
+    <center><h3>Counsellors</h3></center>
+    <div class="container">
+
+        <div class="card">
+            <img alt="Individual therapy"
+                 src="https://d35oenyzp35321.cloudfront.net/doctor_nisha_b6e358f471.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Dr. Nisha Khanna</h5>
+                <p>With over 15 years of experience, she has counseled more than 15,000 individuals on issues ranging from personal stress to relationship challenges. </p>
+                 <a href="https://www.practo.com/delhi/therapist/nisha-khanna-1-psychiatrist?utm_source=opd_google_Pmax&utm_campaign=19686100498&gad_source=1&gclid=Cj0KCQiA3sq6BhD2ARIsAJ8MRwWMUB41tlD6H4e659vrV5NCSLaMGDQ0DkkEvQ5aw2FXTGIPY-iEgCYaAohoEALw_wcB" target="_blank">Book Appointment</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Meditation"
+                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBHB2pAg9CoyJRzvOvflIvrTrju5Hlo4qWNUj5-nEuOyuCOYRhO-aaLhG_ybkY1xLlxRw&usqp=CAU">
+            <div class="card-body">
+                <h5 class="card-title">Dr. Era Dutta</h5>
+                <p> She is known for blending traditional psychiatric approaches with modern therapeutic practices to address mental health challenges</p>
+                &nbsp;
+                <a href="https://www.practo.com/bangalore/doctor/era-dutta-psychiatrist?utm_source=opd_google_Pmax&utm_campaign=19686100498&gad_source=1&gclid=Cj0KCQiA3sq6BhD2ARIsAJ8MRwUPlGeB8JNWxnA1Za6_y5SsT6j2Ou6yN4eGcVmZmJuM1SiaiVv99YwaAryvEALw_wcB" target="_blank">Book Appointment</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Stress Relief Activities"
+                 src="https://ugc.production.linktr.ee/rY61seMQ7CDkUItfK5HC_rvcz4UntyVanPB1k?io=true&size=avatar-v3_0">
+            <!-- Replace with correct image URL -->
+            <div class="card-body">
+                <h5 class="card-title">Aishwarya Chawla</h5>
+                <p>She emphasizes breaking mental health stigma and providing accessible therapy. She is based in New Delhi and works extensively with diverse populations</p>
+                <a href="https://linktr.ee/Aishwarya30" target="_blank">Book Appointment</a>
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Reading Books"
+                 src="https://ghsm.hms.harvard.edu/sites/default/files/assets/People/GHSMWebsite_PeoplePages_Headshots_PatelVikram.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Dr. Vikram Patel</h5>
+                <p>He has contributed extensively to integrating mental health into primary care and developing community-based models for treatmen</p>
+                <a href="https://www.doctor360.in/north-goa/psychiatrist/dr-vikram-patel-bardez" target="_blank">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

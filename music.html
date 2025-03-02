@@ -1,0 +1,132 @@
+{% extends 'base2.html' %}
+
+{% block title %}Support | page {% endblock %}
+
+{% block content %}
+<style>
+    /* Updated content section to use background color */
+    .content {
+        background-color: #7B68EE;  /* Set the background color to #7B68EE */
+        padding: 50px 0;
+        color: #f5eeee;
+        text-align: center;
+    }
+
+    /* Container to center the cards */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: nowrap;  /* All cards in a single row */
+        gap: 20px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    /* Card styling */
+    .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 22%; /* Make cards fit in one row with equal width */
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+        color: #333;
+        margin: 15px 0;
+    }
+
+    /* Links and Buttons */
+    .card a {
+        color: white;
+        background-color: #7B68EE;  /* Updated button color */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px 0;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .card a:hover {
+        background-color: #6a4bcf;  /* Darker shade on hover */
+    }
+
+    /* Navbar link styling */
+    .navbar a {
+        color: rgb(33, 25, 25); /* Text color */
+        padding: 30px 40px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .navbar button {
+        color: white;
+        background-color: #af4c91; /* Button color */
+        padding: 14px 20px;
+        margin: 0 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+</style>
+
+<div class="content">
+    <!-- All Containers in the same row -->
+    <center><h3>Where words fail,music speaks...</h3></center>
+    <div class="container">
+
+        <div class="card">
+            <img alt="Peacefull songs"
+                 src="https://i.pinimg.com/originals/da/91/2b/da912ba24313ff13116c7e05960aa7dd.jpg">
+            <div class="card-body">
+                <h5 class="card-title">To Find Inner Peace</h5>
+                <a href="https://open.spotify.com/playlist/4xxszz5rEPpYMRaMOHIWel?si=3pwT-KkvQhedE2_sH-C1fw" target="_blank">Listen now</a>
+
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Motivation"
+                 src="https://i.pinimg.com/originals/eb/d6/86/ebd6866542732abdec91f7e7d6cb1054.jpg">
+            <div class="card-body">
+                <h5 class="card-title">To Spark Enthusiasm</h5>
+                <a href="https://open.spotify.com/playlist/6RtESsqB6n63ZVrvTfbXY1?si=CHOGpjzeSYeOCqm7SHji1w&pi=Qk51a7ZhStqNX" target="_blank">Listen now</a>
+
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Mass"
+                 src="https://img.freepik.com/free-vector/silhouettes-people-dancing-colorful-background_1048-4796.jpg">
+            <!-- Replace with correct image URL -->
+            <div class="card-body">
+                <h5 class="card-title">Rhythm of masses </h5>
+                <a href="https://open.spotify.com/playlist/37i9dQZF1DWWwrjLPC16W7?si=c4FxX7bBRJqdBbZsjtBjOQ&pi=CTk5G9h6QJWCt" target="_blank">Listen now</a>
+
+            </div>
+        </div>
+        <div class="card">
+            <img alt="Stress"
+                 src="https://t3.ftcdn.net/jpg/08/52/86/60/360_F_852866093_b9KbAIKpuB4XhNH3hbhALVSSKV1qvMa4.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Stress Soothing</h5>
+                <a href="https://open.spotify.com/playlist/0eU3ubPAnqeSMi9K3YKVpC?si=yuXfbqb8S96b8Hp_Pd23Ww&pi=Eqizu8yeQSiZp" target="_blank">Listen now</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
